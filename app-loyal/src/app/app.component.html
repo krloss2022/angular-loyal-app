@@ -1,3 +1,4 @@
+<!--
 <h1>
   App component
 </h1>
@@ -7,13 +8,20 @@
 </h2>
 <app-users></app-users>
 
-<div *ngIf="mostrarLogin" [class]="applogin">
+<div *ngIf="mostrarLogin; else ElseMostrarLogin" [class]="applogin">
   <h3>
     Ahora login component
   </h3>
   <app-login></app-login>
 </div>
 
+<ng-template #ElseMostrarLogin>
+  <p>Bloque else de mostrarLogin</p>
+</ng-template>
+<button (click)="mostrarLogin = !mostrarLogin">
+  Cambiar Mostar Login
+</button>
+<br>
 <div>
   <h4>Nombres:</h4>
   <ul>
@@ -32,4 +40,35 @@
   Cambiar Clase
 </button>
 <hr>
+<h3>Ng switch</h3>
+<section>
+  <div [ngSwitch]="edad">
+    <div *ngSwitchCase="1">
+      Edad es 1
+    </div>
+    <div *ngSwitchCase="2">
+      Edad es 2
+    </div>
+    <div *ngSwitchCase="3">
+      Edad es 3
+    </div>
+  </div>
+  <br>
+  <div [ngSwitch]="getEdad()">
+    <div *ngSwitchCase="1">
+      Edad es 1
+    </div>
+    <div *ngSwitchCase="2">
+      Edad es 2
+    </div>
+    <div *ngSwitchCase="3">
+      Edad es 3
+    </div>
+  </div>
+</section>
+-->
+
+<!--incluyo app-dashboard-->
+<app-dashboard></app-dashboard>
+
 <router-outlet></router-outlet>
