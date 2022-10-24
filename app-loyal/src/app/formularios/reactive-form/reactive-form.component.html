@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="col-6">
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label>Usernam</label>
+        <input
+          formControlName="username"
+          required
+
+          [ngClass]="{'is-invalid' : loginForm.get('useranme')?.invalid && loginForm.get('useranme')?.invalid}">
+
+        <button type="submit" [disabled]="hasError()">
+          Enviar
+        </button>
+        <input type="reset" value="Reset">
+
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    <h3>informacion de formulario</h3>
+    <ul>
+      <li>
+        value: {{loginForm.value | json}}
+      </li>
+      <li>
+        valid: {{loginForm.valid}}
+      </li>
+      <li>
+        <!-- submitted: {{loginForm.submitted}} -->
+      </li>
+      <li>
+        pristine: {{loginForm.pristine}}
+      </li>
+      <li>
+        touched: {{loginForm.touched}}
+      </li>
+      <li>
+        username: {{loginForm.get('username')?.errors | json}}
+      </li>
+    </ul>
+  </div>
+</div>
