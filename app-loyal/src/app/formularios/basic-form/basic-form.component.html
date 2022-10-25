@@ -1,0 +1,31 @@
+<div class="container mb-5">
+  <h1>Basic Form + angular material  </h1>
+
+  <form [formGroup]="myForm" style="background-color: burlywood">
+    values: {{myForm.value | json}}
+    <hr>
+    <mat-form-field>
+      <!-- <mat-label>Email</mat-label> -->
+      <input matInput placeholder="email" formControlName="email" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <!-- <mat-label>Message</mat-label> -->
+      <textarea matInput placeholder="your message" formControlName="message" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Option</mat-label>
+      <mat-select formControlName="option" required>
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{op}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-button (click)="submitForm()">
+      Enviar
+    </button>
+
+  </form>
+  </div>

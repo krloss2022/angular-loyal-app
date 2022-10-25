@@ -16,7 +16,17 @@ import { ContactoClienteComponent } from './components/contacto-cliente/contacto
 import { RecomendacionesComponent } from './components/recomendaciones/recomendaciones.component';
 import { TemplateDrivenComponent } from './formularios/template-driven/template-driven.component';
 import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form.component';
+import { ArrayFormComponent } from './formularios/array-form/array-form.component';
 
+/*material */
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import { NestedFormComponent } from './formularios/nested-form/nested-form.component';
+import { BasicFormComponent } from './formularios/basic-form/basic-form.component';
 @NgModule({
   /*definir las vitas que formar parte del módulo */
   declarations: [
@@ -33,13 +43,23 @@ import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form
     RecomendacionesComponent,
     TemplateDrivenComponent,
     ReactiveFormComponent,
+    ArrayFormComponent,
+    NestedFormComponent,
+    BasicFormComponent,
   ],
   /*export de otro módulos que importamos */
   imports: [
   BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    /*meterial*/
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
   ],
   /*servcios que se pueden acceder desde cualuier parte de la aplicación */
   providers: [],

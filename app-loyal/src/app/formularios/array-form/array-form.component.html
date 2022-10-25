@@ -1,0 +1,40 @@
+<div class="container mb-5">
+<h1>reactive form + angular material  </h1>
+
+<form [formGroup]="myForm" style="background-color: burlywood">
+  values: {{myForm.value | json}}
+
+  <hr>
+
+  <mat-form-field>
+    <!-- <mat-label>Email</mat-label> -->
+    <input matInput placeholder="email" formControlName="email" required>
+  </mat-form-field>
+
+  <!--agrega los valores del array-->
+  <div formArrayName="phones">
+
+    <div *ngFor="let phone of phoneForms.controls; let i=index" [formGroupName]="i">
+
+      <mat-form-field>
+        <input matInput placeholder="area" formControlName="area" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="prefix" formControlName="prefix" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="line" formControlName="line" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="warn" (click)="deletePhones(i)">Remove</button>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" mat-button (click)="addPhone()">
+    Add Phone
+  </button>
+
+</form>
+</div>

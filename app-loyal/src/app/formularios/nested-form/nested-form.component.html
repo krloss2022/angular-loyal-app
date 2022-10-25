@@ -1,0 +1,42 @@
+<div class="container mb-5">
+  <h1>Nested Form</h1>
+
+  <form [formGroup]="myForm" style="background-color: rgb(248, 228, 201)">
+    values: {{myForm.value | json}}
+      <hr>
+    <mat-form-field>
+      <input matInput placeholder="email" formControlName="email" required>
+    </mat-form-field>
+
+    <h4>cell phione</h4>
+
+    <!--agregamos lo particular para nensted form usamos formGroupName-->
+    <div formGroupName="cellPhone">
+      <mat-form-field>
+        <input matInput placeholder="area" formControlName="area" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="prefix" formControlName="prefix" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="line" formControlName="line" required>
+      </mat-form-field>
+    </div>
+
+    <h4>Home Phone</h4>
+    <div formGroupName="homePhone">
+      <mat-form-field>
+        <input matInput placeholder="area" formControlName="area" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="prefix" formControlName="prefix" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="line" formControlName="line" required>
+      </mat-form-field>
+    </div>
+    <button mat-button (click)="submitForm()">
+      Enviar
+    </button>
+  </form>
+</div>
