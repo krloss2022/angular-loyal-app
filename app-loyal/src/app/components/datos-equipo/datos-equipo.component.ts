@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DatosEquipo } from './../../dashboard/dashboard.component';
+import { Equipo } from 'src/app/services/informacion-cliente';
 
 @Component({
   selector: 'app-datos-equipo',
@@ -9,7 +9,7 @@ import { DatosEquipo } from './../../dashboard/dashboard.component';
 export class DatosEquipoComponent implements OnInit {
 
   @Input()
-  equipo?: DatosEquipo[]
+  equipo?: Equipo;
 
   constructor() { }
 

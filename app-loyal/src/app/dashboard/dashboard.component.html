@@ -38,17 +38,17 @@
               <!-- Content Row -->
               <div class="row">
                 <div class="col-sm-12 col-lg-6">
-                  <app-saldo [saldo]="saldos"></app-saldo>
+                  <app-saldo [saldo]="informacion?.saldos"></app-saldo>
                 </div>
                 <div class="col-sm-12 col-lg-6">
-                  <app-datos-equipo [equipo]="datosEquipo"></app-datos-equipo>
+                  <app-datos-equipo [equipo]="informacion?.equipo"></app-datos-equipo>
                 </div>
               </div>
 
               <!-- Content Row -->
               <div class="row">
                 <div class="col-sm-12 col-lg-8">
-                  <app-contacto-cliente></app-contacto-cliente>
+                  <app-contacto-cliente [cliente]="informacion?.cliente"></app-contacto-cliente>
                 </div>
                 <div class="col-sm-12 col-lg-4">
                   <app-recomendaciones></app-recomendaciones>

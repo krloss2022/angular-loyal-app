@@ -8,7 +8,7 @@
   <!-- Card Content - Collapse -->
   <div class="collapse show" id="collapseCardExamplede">
     <div class="card-body">
-      <a class="dropdown-item d-flex align-items-center" href="#" *ngFor="let equipo of equipo">
+      <a class="dropdown-item d-flex align-items-center" href="#" *ngFor="let equipo of equipo?.datosEquipo">
         <div class="mr-3">
           <div class="icon-circle bg-success">
             <i class="fas fa-donate text-white"></i>
@@ -16,57 +16,11 @@
         </div>
         <div>
           <div class="small text-gray-500">
-            {{equipo.texto}}
+            {{equipo.titulo}}
           </div>
-          {{equipo.valor}}
+          {{equipo.dato}}
         </div>
       </a>
-      <!--
-      <a class="dropdown-item d-flex align-items-center" href="#">
-        <div class="mr-3">
-          <div class="icon-circle bg-success">
-            <i class="fas fa-donate text-white"></i>
-          </div>
-        </div>
-        <div>
-          <div class="small text-gray-500">ESTADO DE LINEA</div>
-          ACTIVO
-        </div>
-      </a>
-      <a class="dropdown-item d-flex align-items-center" href="#">
-        <div class="mr-3">
-          <div class="icon-circle bg-success">
-            <i class="fas fa-donate text-white"></i>
-          </div>
-        </div>
-        <div>
-          <div class="small text-gray-500">FABRICANTE</div>
-          MOTOROLA
-        </div>
-      </a>
-      <a class="dropdown-item d-flex align-items-center" href="#">
-        <div class="mr-3">
-          <div class="icon-circle bg-success">
-            <i class="fas fa-donate text-white"></i>
-          </div>
-        </div>
-        <div>
-          <div class="small text-gray-500">EQUIPO EN USO</div>
-          SI
-        </div>
-      </a>
-      <a class="dropdown-item d-flex align-items-center" href="#">
-        <div class="mr-3">
-          <div class="icon-circle bg-success">
-            <i class="fas fa-donate text-white"></i>
-          </div>
-        </div>
-        <div>
-          <div class="small text-gray-500">MISDN</div>
-          132131231321
-        </div>
-      </a>
-    -->
     </div>
   </div>
 </div>

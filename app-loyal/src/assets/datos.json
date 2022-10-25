@@ -1,0 +1,78 @@
+{
+  "saldos": {
+    "datosSaldos": [
+      {
+        "titulo": "CRÉDITO DE RECARGA",
+        "fecha": "22-jul",
+        "descripcion": "YY ZZ.YYY"
+      },
+      {
+        "titulo": "CRÉDITO PROMOCIONAL",
+        "fecha": "22-jul",
+        "descripcion": "XX YY.ZZZ"
+      },
+      {
+        "titulo": "INTERNET",
+        "fecha": "Vto. 16-oct 12:30 AM",
+        "descripcion": "150 MB"
+      },
+      {
+        "titulo": "LLAMADAS DE REGALO",
+        "fecha": "5-jul 12:10 PM",
+        "descripcion": "Itimitado"
+      },
+      {
+        "titulo": "WHATAPP",
+        "fecha": "-",
+        "descripcion": "Disponible"
+      }
+    ]
+  },
+  "equipo": {
+    "datosEquipo": [
+      {
+        "titulo": "IMEI",
+        "dato": "2211334455"
+      },
+      {
+        "titulo": "ESTADO",
+        "dato": "linea ACTIVA"
+      },
+      {
+        "titulo": "FABRICANTE",
+        "dato": "SONY"
+      },
+      {
+        "titulo": "EQUIPOENUSO",
+        "dato": "SI"
+      },
+      {
+        "titulo": "MISDN",
+        "dato": "9887766332"
+      }
+    ]
+  },
+  "cliente": {
+    "contactos": [
+      {
+        "fecha": "Ayer 11:09",
+        "empresa": "CLARO",
+        "descripcion": "Te acreditamos CODZZ123. Recibiste de regalo CODIGOXXXX promocionales y 300 MB. Info de saldos y consumos *YYY#. Trans..."
+      },
+      {
+        "fecha": "Ayer 10:19",
+        "empresa": "CLARO",
+        "descripcion": "Te acreditamos CODZZ123. Recibiste de regalo CODIGOXXXX promocionales y 500 MB. Info de saldos y consumos *YYY#. Trans..."
+      }
+    ]
+  },
+  "recomendaciones": {
+    "recomendaciones": [
+      {
+        "titulo": "OFERTA",
+        "subTitulo": "Nuevo Equipo",
+        "descripcion": "Tenemos una oferta especial."
+      }
+    ]
+  }
+}

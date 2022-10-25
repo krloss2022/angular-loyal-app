@@ -17,6 +17,7 @@ import { RecomendacionesComponent } from './components/recomendaciones/recomenda
 import { TemplateDrivenComponent } from './formularios/template-driven/template-driven.component';
 import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form.component';
 import { ArrayFormComponent } from './formularios/array-form/array-form.component';
+import { HttpClientModule } from '@angular/common/http'
 
 /*material */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -60,6 +61,8 @@ import { BasicFormComponent } from './formularios/basic-form/basic-form.componen
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
+    /*http module */
+    HttpClientModule
   ],
   /*servcios que se pueden acceder desde cualuier parte de la aplicación */
   providers: [],

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api_reqres: 'http://sandbox.reqres.in'
+  url_api_reqres: 'https://reqres.in',
 };
 
 /*

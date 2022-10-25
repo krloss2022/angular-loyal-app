@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SaldoContainer } from '../../dashboard/dashboard.component';
+import { Saldos } from 'src/app/services/informacion-cliente';
 
 @Component({
   selector: 'app-saldo',
@@ -9,7 +9,7 @@ import { SaldoContainer } from '../../dashboard/dashboard.component';
 export class SaldoComponent implements OnInit {
 
   @Input()
-  saldo?: SaldoContainer;
+  saldo?: Saldos;
 
   constructor() { }
 
