@@ -5,6 +5,7 @@ import { ClienteDataService } from './../../services/cliente-data.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
 import { Comment, Users } from '../../model/json-placeholder';
+import { AlertService } from './../../commons/service/alert.service';
 
 @Component({
   selector: 'app-topbar',
@@ -21,7 +22,8 @@ export class TopbarComponent implements OnInit {
     private fb: FormBuilder,
     private clienteHttpSerive: ClienteHttpService,
     private clienteDataService: ClienteDataService,
-    private http: HttpClient
+    private http: HttpClient,
+    private alertService: AlertService
     ) { }
 
   searchForm: FormGroup = this.fb.group({
@@ -30,7 +32,7 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit(): void {
     //console.log(this.users);
-    this.http.get<Comment[]>(`${environment.url_jph_path}/123comments?postId=1`).subscribe(
+    this.http.get<Comment[]>(`${environment.url_jph_path}/comments?postId=1`).subscribe(
       data => this.posts = data
     );
   }
@@ -46,6 +48,7 @@ export class TopbarComponent implements OnInit {
       data => {
         //convertir antes de hacer ul update.
         this.clienteDataService.updateCliente(data);
+        this.alertService.success('Encontramos lo que buscas!!!!');
       },
       //error
       error => {
@@ -60,5 +63,6 @@ export class TopbarComponent implements OnInit {
 
   reset(): void {
     this.clienteDataService.clear();
+    this.alertService.clear();
   }
 }

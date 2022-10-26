@@ -72,6 +72,16 @@
         "titulo": "OFERTA",
         "subTitulo": "Nuevo Equipo",
         "descripcion": "Tenemos una oferta especial."
+      },
+      {
+        "titulo": "DESCUENTO",
+        "subTitulo": "Equipos Nuevos",
+        "descripcion": "hasta 40% off"
+      },
+      {
+        "titulo": "DESCUENTO",
+        "subTitulo": "Equipos Nuevos",
+        "descripcion": "hasta 50% off"
       }
     ]
   }

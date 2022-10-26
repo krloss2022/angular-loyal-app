@@ -20,6 +20,8 @@ import { ArrayFormComponent } from './formularios/array-form/array-form.componen
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { JwtInterceptorService } from './services/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
+//modulo propio
+import { CommonsModule } from './commons/commons.module';
 
 /*material */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -64,7 +66,9 @@ import { BasicFormComponent } from './formularios/basic-form/basic-form.componen
     MatCheckboxModule,
     MatChipsModule,
     /*http module */
-    HttpClientModule
+    HttpClientModule,
+    /*nuestro modulo */
+    CommonsModule
   ],
   /*servcios que se pueden acceder desde cualuier parte de la aplicación */
   /*agregar interceptores */
