@@ -29,8 +29,8 @@ export class TopbarComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    console.log(this.users);
-    this.http.get<Comment[]>(`${environment.url_jph_path}/comments?postId=1`).subscribe(
+    //console.log(this.users);
+    this.http.get<Comment[]>(`${environment.url_jph_path}/123comments?postId=1`).subscribe(
       data => this.posts = data
     );
   }

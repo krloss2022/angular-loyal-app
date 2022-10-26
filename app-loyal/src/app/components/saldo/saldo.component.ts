@@ -14,7 +14,7 @@ export class SaldoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('' + this.saldo);
+    // console.log('' + this.saldo);
   }
 
 }

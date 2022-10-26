@@ -19,6 +19,7 @@ import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form
 import { ArrayFormComponent } from './formularios/array-form/array-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { JwtInterceptorService } from './services/jwt-interceptor.service';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
 
 /*material */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -51,7 +52,7 @@ import { BasicFormComponent } from './formularios/basic-form/basic-form.componen
   ],
   /*export de otro módulos que importamos */
   imports: [
-BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -70,6 +71,9 @@ BrowserModule,
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
     }
   ],
   /*componente inical de la aplicación */
