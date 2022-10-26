@@ -17,7 +17,8 @@ import { RecomendacionesComponent } from './components/recomendaciones/recomenda
 import { TemplateDrivenComponent } from './formularios/template-driven/template-driven.component';
 import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form.component';
 import { ArrayFormComponent } from './formularios/array-form/array-form.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { JwtInterceptorService } from './services/jwt-interceptor.service';
 
 /*material */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -50,7 +51,7 @@ import { BasicFormComponent } from './formularios/basic-form/basic-form.componen
   ],
   /*export de otro módulos que importamos */
   imports: [
-  BrowserModule,
+BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -65,7 +66,12 @@ import { BasicFormComponent } from './formularios/basic-form/basic-form.componen
     HttpClientModule
   ],
   /*servcios que se pueden acceder desde cualuier parte de la aplicación */
-  providers: [],
+  /*agregar interceptores */
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true
+    }
+  ],
   /*componente inical de la aplicación */
   bootstrap: [AppComponent]
 })

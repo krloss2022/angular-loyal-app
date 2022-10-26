@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ClienteHttpService } from 'src/app/services/cliente-http.service';
 import { ClienteDataService } from './../../services/cliente-data.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from './../../../environments/environment';
+import { Comment, Users } from '../../model/json-placeholder';
 
 @Component({
   selector: 'app-topbar',
@@ -9,11 +12,16 @@ import { ClienteDataService } from './../../services/cliente-data.service';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
+  @Input()
+  users?: Users[];
+
+  posts:Comment[] = [];
 
   constructor(
     private fb: FormBuilder,
     private clienteHttpSerive: ClienteHttpService,
-    private clienteDataService: ClienteDataService
+    private clienteDataService: ClienteDataService,
+    private http: HttpClient
     ) { }
 
   searchForm: FormGroup = this.fb.group({
@@ -21,6 +29,10 @@ export class TopbarComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    console.log(this.users);
+    this.http.get<Comment[]>(`${environment.url_jph_path}/comments?postId=1`).subscribe(
+      data => this.posts = data
+    );
   }
 
   executeSearch() {
@@ -46,4 +58,7 @@ export class TopbarComponent implements OnInit {
     );
   }
 
+  reset(): void {
+    this.clienteDataService.clear();
+  }
 }

@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   url_api_reqres: 'https://reqres.in',
+  url_jph_path: 'https://jsonplaceholder.typicode.com',
 };
 
 /*
